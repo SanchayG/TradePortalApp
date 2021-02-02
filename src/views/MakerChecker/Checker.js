@@ -20,7 +20,7 @@ const Collapses = () => {
 
   const [collapse, setCollapse] = useState(false)
   const [collapseMulti, setCollapseMulti] = useState([false, false])
-  const [accordion, setAccordion] = useState(1)
+  const [accordion, setAccordion] = useState(0)
   const [fade, setFade] = useState(true)
 
   const toggle = (e) => {
