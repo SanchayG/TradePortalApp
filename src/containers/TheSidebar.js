@@ -10,6 +10,7 @@ import {
   CSidebarMinimizer,
   CSidebarNavDropdown,
   CSidebarNavItem,
+  CLabel,
 } from '@coreui/react'
 
 import CIcon from '@coreui/icons-react'
