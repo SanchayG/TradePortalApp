@@ -16,13 +16,16 @@ const _nav =  [
   {
     _tag: 'CSidebarNavItem',
     name: 'Maker Screen',
-    to: '/theme/colors',
+    //to: '/theme/colors',
+    
+    to :'/MakerChecker/Maker',
     icon: 'cil-drop',
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'Checker Screen',
-    to: '/theme/typography',
+    //to: '/theme/typography',
+    to :'/MakerChecker/Checker',
     icon: 'cil-pencil',
   },
   {
