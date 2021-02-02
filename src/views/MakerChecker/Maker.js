@@ -20,7 +20,7 @@ const Collapses = () => {
 
   const [collapse, setCollapse] = useState(false)
   const [collapseMulti, setCollapseMulti] = useState([false, false])
-  const [accordion, setAccordion] = useState(1)
+  const [accordion, setAccordion] = useState(0)
   const [fade, setFade] = useState(true)
 
   const toggle = (e) => {
@@ -152,9 +152,10 @@ const Collapses = () => {
                         </CFormGroup>
                     </CCol>
                 </CFormGroup>
-            </CCardBody>
+                </CCardBody>
                 </CCollapse>
               </CCard>
+              <br/>
               <CCard className="mb-0">
                 <CCardHeader id="headingTwo">
                   <CButton 
@@ -221,6 +222,7 @@ const Collapses = () => {
                   </CCardBody>
                 </CCollapse>
               </CCard>
+              <br/>
               <CCard className="mb-0">
                 <CCardHeader id="headingThree">
                   <CButton 
