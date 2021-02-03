@@ -12,6 +12,7 @@ import {
   CInput,
   CLabel,
   CSelect,
+  CTextarea,
   CRow 
 } from '@coreui/react';
 
@@ -254,9 +255,21 @@ const Collapses = () => {
                             <CLabel htmlFor="select">Beneficiary Country</CLabel>
                               <CSelect id="select" >
                                   <option value="0" >Please select Country Name</option>
-                                 <option value="1">Option #1</option>
-                             <option value="2">Option #2</option>
-                                <option value="3">Option #3</option>
+                                  <option value="1">Afghanistan</option>
+                                  <option value="2">Belgium</option>
+                                  <option value="3">Brazil</option>
+                                  <option value="4">Canada</option>
+                                  <option value="5">China</option>
+                                  <option value="6">Malaysia</option>
+                                  <option value="7">Mexico</option>
+                                  <option value="8">New Zealand</option>
+                                  <option value="9">Norway</option>
+                                  <option value="10">Peru</option>
+                                  <option value="11">Russia</option>
+                                  <option value="12">India</option>
+                                  <option value="13">Japan</option>
+                                  <option value="14">United States of America</option>
+                                  <option value="15">Thailand</option>
                               </CSelect>
                             
                         </CFormGroup>
@@ -305,9 +318,36 @@ const Collapses = () => {
                   </CCardBody>
                 </CCollapse>
               </CCard>
+              <br/>
+              <CCard className="mb-0">
+                <CCardHeader id="headingThree">
+                  <CButton 
+                    block 
+                    color="link" 
+                    className="text-left m-0 p-0" 
+                    onClick={() => setAccordion(accordion === 3 ? null : 3)}
+                  >
+                    <h5 className="m-0 p-0">Remarks</h5>
+                  </CButton>
+                </CCardHeader>
+                <CCollapse show={accordion === 3}>
+                  <CCardBody>
+                  <CFormGroup row className="my-0">
+                    <CCol xs="12">
+                        <CFormGroup>
+                            
+                            <CTextarea id="company" placeholder="Enter Remarks"  />
+                        </CFormGroup>
+                    </CCol>
+                    
+                </CFormGroup>
+                  </CCardBody>
+                </CCollapse>
+              </CCard>
             </div>
           </CCardBody>
         </CCard>
+        
       </CCol>
     </CRow>
   )
