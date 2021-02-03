@@ -67,3 +67,29 @@
 .pr-md-3, .px-md-3 {
     padding-right: 78% !important;
 }
+.c-sidebar .c-sidebar-brand {
+    color: #fff;
+    background: rgba(0, 0, 21, 0.2);
+    align-self: baseline;
+}
+.c-sidebar {
+    position: relative;
+    display: flex;
+    flex: 0 0 256px;
+    flex-direction: column;
+    order: -1;
+    width: 220px;
+    padding: 0;
+    box-shadow: none;
+}
+.c-sidebar.c-sidebar-lg-show:not(.c-sidebar-right).c-sidebar-fixed ~ .c-wrapper, html:not([dir="rtl"]) .c-sidebar.c-sidebar-show:not(.c-sidebar-right).c-sidebar-fixed ~ .c-wrapper {
+    margin-left: 220px !important;
+}
+.page-link {
+    margin-left: 5px !important;
+    border-radius: 20px !important;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    color: white;
+}

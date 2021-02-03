@@ -3,7 +3,7 @@ const inboxData = [
 
 
     {
-        "Txn No": "89807",
+        "Txn_No": "89807",
         "Product": "LC",
         "Sub-Product": "Lodgement",
         "Operation": "Issuance",
@@ -17,7 +17,7 @@ const inboxData = [
         "Entry Time": "10:30 AM"
     },
     {
-        "Txn No": "31752",
+        "Txn_No": "31752",
         "Product": "LC",
         "Sub-Product": "Lodgement",
         "Operation": "Issuance",
@@ -31,7 +31,7 @@ const inboxData = [
         "Entry Time": "10:04 AM"
     },
     {
-        "Txn No": "12436",
+        "Txn_No": "12436",
         "Product": "LC",
         "Sub-Product": "Lodgement",
         "Operation": "Issuance",
@@ -45,7 +45,7 @@ const inboxData = [
         "Entry Time": "2:30 PM"
     },
     {
-        "Txn No": "26741",
+        "Txn_No": "26741",
         "Product": "LC",
         "Sub-Product": "Lodgement",
         "Operation": "Issuance",
@@ -59,7 +59,7 @@ const inboxData = [
         "Entry Time": "2:12 PM"
     },
     {
-        "Txn No": "19270",
+        "Txn_No": "19270",
         "Product": "LC",
         "Sub-Product": "Lodgement",
         "Operation": "Issuance",
@@ -73,7 +73,7 @@ const inboxData = [
         "Entry Time": "11:54 AM"
     },
     {
-        "Txn No": "49395",
+        "Txn_No": "49395",
         "Product": "LC",
         "Sub-Product": "Lodgement",
         "Operation": "Issuance",
@@ -87,7 +87,7 @@ const inboxData = [
         "Entry Time": "4:21 PM"
     },
     {
-        "Txn No": "14812",
+        "Txn_No": "14812",
         "Product": "LC",
         "Sub-Product": "Lodgement",
         "Operation": "Issuance",
@@ -101,7 +101,7 @@ const inboxData = [
         "Entry Time": "6:10 PM"
     },
     {
-        "Txn No": "23947",
+        "Txn_No": "23947",
         "Product": "Collection",
         "Sub-Product": "Import",
         "Operation": "Issuance",
@@ -115,7 +115,7 @@ const inboxData = [
         "Entry Time": "1:45 PM"
     },
     {
-        "Txn No": "65400",
+        "Txn_No": "65400",
         "Product": "Collection",
         "Sub-Product": "Export",
         "Operation": "Issuance",
