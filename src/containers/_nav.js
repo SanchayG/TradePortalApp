@@ -42,7 +42,13 @@ const _nav =  [
     icon: 'cil-chart-pie'
   },
   
-  
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Logout',
+    to: '/Login',
+    icon: 'cil-scrubber',
+    
+  },
   {
     _tag: 'CSidebarNavDivider',
     className: 'm-2'
