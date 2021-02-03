@@ -11,6 +11,7 @@ import {
   CSidebarNavDropdown,
   CSidebarNavItem,
   CLabel,
+  CImg,
 } from '@coreui/react'
 
 import CIcon from '@coreui/icons-react'
@@ -18,9 +19,14 @@ import CIcon from '@coreui/icons-react'
 // sidebar nav config
 import navigation from './_nav'
 
+// import sglogo from './datamatics.jpg';
+import sglogo from './Dgsl_Logo.jpg';
+
 const TheSidebar = () => {
   const dispatch = useDispatch()
   const show = useSelector(state => state.sidebarShow)
+  
+
 
   return (
     <CSidebar
@@ -28,16 +34,9 @@ const TheSidebar = () => {
       onShowChange={(val) => dispatch({type: 'set', sidebarShow: val })}
     >
       <CSidebarBrand className="d-md-down-none" to="/">
-        <CIcon
-          className="c-sidebar-brand-full"
-          name="logo-negative"
-          height={35}
-        />
-        <CIcon
-          className="c-sidebar-brand-minimized"
-          name="sygnet"
-          height={35}
-        />
+      
+      <img src={sglogo} alt="DGSL Logo" />
+  
       </CSidebarBrand>
       <CSidebarNav>
 

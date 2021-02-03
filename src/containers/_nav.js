@@ -6,7 +6,8 @@ const _nav =  [
     _tag: 'CSidebarNavItem',
     name: 'Inbox',
     to: '/dashboard',
-    icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>
+    // icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>
+    icon: <CIcon name="cil-envelope-open" customClasses="c-sidebar-nav-icon"/>
     
   },
   {
@@ -19,14 +20,14 @@ const _nav =  [
     //to: '/theme/colors',
     
     to :'/MakerChecker/Maker',
-    icon: 'cil-drop',
+    icon: 'cil-user',
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'Checker Screen',
     //to: '/theme/typography',
     to :'/MakerChecker/Checker',
-    icon: 'cil-pencil',
+    icon: 'cil-user',
   },
   {
     _tag: 'CSidebarNavTitle',
