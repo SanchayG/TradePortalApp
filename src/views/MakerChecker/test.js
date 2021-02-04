@@ -1,65 +1,40 @@
-import React from 'react'
-import {
-  CCard,
-  CCardBody,
-  CCol,
-  CFormGroup,
-  CInput,
-  CLabel,
-  CRow
-} from '@coreui/react'
-import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
+import React from "react";
 
-const BasicForms = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
+/**
+ * Component to handle file upload. Works for image
+ * uploads, but can be edited to work for any file.
+ */
+function FileUpload() {
+  // State to store uploaded file
+  const [file, setFile] = React.useState("");
+
+  // Handles file upload event and updates state
+  function handleUpload(event) {
+    setFile(event.target.files[0]);
+
+    // Add code here to upload file to server
+    // ...
+  }
 
   return (
-    <>
-      <CRow>
-        
-        <CCol xs="12" sm="12">
-          <CCard>
-
-            <CCardBody>
-              <CFormGroup>
-                <CLabel htmlFor="company">Company</CLabel>
-                <CInput id="company" placeholder="Enter your company name" />
-              </CFormGroup>
-              <CFormGroup>
-                <CLabel htmlFor="vat">VAT</CLabel>
-                <CInput id="vat" placeholder="DE1234567890" />
-              </CFormGroup>
-              <CFormGroup>
-                <CLabel htmlFor="street">Street</CLabel>
-                <CInput id="street" placeholder="Enter street name" />
-              </CFormGroup>
-              <CFormGroup row className="my-0">
-                <CCol xs="8">
-                  <CFormGroup>
-                    <CLabel htmlFor="city">City</CLabel>
-                    <CInput id="city" placeholder="Enter your city" />
-                  </CFormGroup>
-                </CCol>
-                <CCol xs="4">
-                  <CFormGroup>
-                    <CLabel htmlFor="postal-code">Postal Code</CLabel>
-                    <CInput id="postal-code" placeholder="Postal Code" />
-                  </CFormGroup>
-                </CCol>
-              </CFormGroup>
-              <CFormGroup>
-                <CLabel htmlFor="country">Country</CLabel>
-                <CInput id="country" placeholder="Country name" />
-              </CFormGroup>
-            </CCardBody>
-          </CCard>
-        </CCol>
-      </CRow>
-      
-    </>
-  )
+    <div id="upload-box">
+      <input type="file" onChange={handleUpload} />
+      <p>Filename: {file.name}</p>
+      <p>File type: {file.type}</p>
+      <p>File size: {file.size} bytes</p>
+      {file && <ImageThumb image={file} />}
+    </div>
+  );
 }
 
-export default BasicForms
+/**
+ * Component to display thumbnail of image.
+ */
+const ImageThumb = ({ image }) => {
+  return <img src={URL.createObjectURL(image)} alt={image.name} />;
+};
+
+
+export default function App() {
+  return <FileUpload />;
+}

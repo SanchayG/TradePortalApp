@@ -22,7 +22,7 @@ const Collapses = () => {
   const [accordion, setAccordion] = useState(0)
   const [fade, setFade] = useState(true)
 
-  const toggle = (e) => {
+  const toggle = (e) => { 
     setCollapse(!collapse)
     e.preventDefault()
   }
