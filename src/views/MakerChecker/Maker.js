@@ -3,11 +3,9 @@ import {
   CButton,
   CCard,
   CCardBody,
-  CCardFooter,
   CCardHeader,
   CCol,
   CCollapse,
-  CFade,
   CFormGroup,
   CInput,
   CLabel,
@@ -344,6 +342,10 @@ const Collapses = () => {
                   </CCardBody>
                 </CCollapse>
               </CCard>
+
+              
+              <CButton color="link">Submit</CButton>
+
             </div>
           </CCardBody>
         </CCard>
