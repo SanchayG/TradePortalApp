@@ -1,73 +1,93 @@
-import { CCardBody, CDataTable, CHeader,CCard } from "@coreui/react";
-import React from "react";
+import axios from 'axios';
+import React,{Component} from 'react'; 
 
-/**
- * Component to handle file upload. Works for image
- * uploads, but can be edited to work for any file.
- */
-let fileDetails =['fileName' ,'fileType','fileSize','View'];
-function FileUpload() {
-  // State to store uploaded file
-  const [file, setFile] = React.useState("");
+class App extends Component { 
 
-  // Handles file upload event and updates state
-  function handleUpload(event) {
-      console.log("inside upload",event.target.files[0].target);
-      console.dir("file details "+JSON.stringify(event.target.files[0]));
-    setFile(event.target.files[0]);
-    let data =[event.target.files[0].name,event.target.files[0].type,event.target.files[0].size,event.target.files[0].target];
-    let tableD = document.getElementById("docTable");
-    let row = document.createElement('tr');
-	for (let i=0; i < data.length; i++){
-        
-    let td = document.createElement('td'); // create a td node
-    
-    td.innerHTML = data[i]; // fill the td now with a piece of the data array
-    // document.getElementById("table-row").appendChild(td); //
-    row.appendChild(td);
-    if(i==data.length-1) {
-        let td = document.createElement('td');
-        td.innerHTML = "<a href='#'>View Document</a>"
-        row.appendChild(td);
-    }
-    }
-    
-    tableD.appendChild(row); //
-    // Add code here to upload file to server
-    // ...
-  }
+    state = { 
   
+      // Initially, no file is selected 
+      selectedFile: null
+    }; 
+     
+    // On file select (from the pop up) 
+    onFileChange = event => { 
+      // Update the state 
+      this.setState({ selectedFile: event.target.files[0] }); 
+    }; 
+     
+    // On file upload (click the upload button) 
+    onFileUpload = () => { 
+      // Create an object of formData 
+      const formData = new FormData(); 
+     
+      // Update the formData object 
+      formData.append( 
+        'file', this.state.selectedFile); 
+     
+
+        axios.post("http://localhost:3002/upload", formData, { // receive two parameter endpoint url ,form data 
+      })
+      .then(res => { // then print response status
+        console.log(res.statusText)
+      })  
+      // Details of the uploaded file 
+    // let reader =new FileReader();
+    // reader.readAsDataURL(this.state.selectedFile);
+    // reader.onload=(e)=>{
+    //   console.warn("data ",e.target.result)
+    // }
+      
+	  
+      // Request made to the backend api 
+      // Send formData object 
+     // axios.post("api/uploadfile", formData); 
+	}
+     
+    // File content to be displayed after 
+    // file upload is complete 
+    fileData = () => { 
+      if (this.state.selectedFile) { 
+          
+        return ( 
+          <div> 
+            <h2>File Details:</h2> 
+            <p>File Name: {this.state.selectedFile.name}</p> 
+            <p>File Type: {this.state.selectedFile.type}</p> 
+            <p> 
+              Last Modified:{" "} 
+              {this.state.selectedFile.lastModifiedDate.toDateString()} 
+            </p> 
+          </div> 
+        ); 
+      } else { 
+        return ( 
+          <div> 
+            <br /> 
+            <h4>Choose before Pressing the Upload button</h4> 
+          </div> 
+        ); 
+      } 
+    }; 
+     
+    render() { 
+      return ( 
+        <div> 
+            <h1> 
+              GeeksforGeeks 
+            </h1> 
+            <h3> 
+              File Upload using React! 
+            </h3> 
+            <div> 
+                <input type="file" onChange={this.onFileChange} /> 
+                <button  value ='upload' onClick={this.onFileUpload}> 
+                  Upload! 
+                </button> 
+            </div> 
+          {this.fileData()} 
+        </div> 
+      ); 
+    } 
+  } 
   
-  return (
-    <div id="upload-box">
-      <input type="file" onChange={handleUpload} />
-      <br/>
-      <br/>
-     <table id="docTable" style={{ width: '80%' ,border: '1px solid black' ,padding: '15px'}}>
-	 <thead>
-		 <tr style={{color: 'white' ,backgroundColor: 'black'}}>
-             <th className='table-header'>File Name</th>
-             <th className='table-header'>File Type</th>
-             <th className='table-header'>File Size</th>
-             <th className='table-header'>View Document</th>
-         </tr>
-	 </thead>
-      <tbody>
-        <tr className='table-row' id = 'table-row'></tr> 
-      </tbody>
-     </table>
-    </div>
-  );
-}
-
-/**
- * Component to display thumbnail of image.
- */
-const ImageThumb = ({ image }) => {
-  return <img src={URL.createObjectURL(image)} alt={image.name} />;
-};
-
-
-export default function App() {
-  return <FileUpload />;
-}
+  export default App; 
