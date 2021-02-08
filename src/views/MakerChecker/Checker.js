@@ -10,7 +10,13 @@ import {
   CInput,
   CLabel,
   CSelect,CTextarea,
-  CRow 
+  CRow,
+  CNav,
+  CNavItem,
+  CNavLink,
+  CTabContent,
+  CTabPane,
+  CTabs
 } from '@coreui/react';
 import { DocsLink } from 'src/reusable'
 
@@ -49,190 +55,193 @@ const Collapses = () => {
   }
 
   return (
-    <CRow>
-     
-      <CCol xl="12">
+    <>
+    <CCol xs="12" md="12" className="mb-4">
         <CCard>
-         
+          
           <CCardBody>
-            <div id="accordion">
-              <CCard className="mb-0">
+            <CTabs activeTab="general">
+              <CNav variant="tabs">
+                <CNavItem>
+                  <CNavLink data-tab="general">
+                    General Details
+                  </CNavLink>
+                </CNavItem>
+                <CNavItem>
+                  <CNavLink data-tab="ref">
+                    Reference Details
+                  </CNavLink>
+                </CNavItem>
+                <CNavItem>
+                  <CNavLink data-tab="benef">
+                    Beneficiary Details
+                  </CNavLink>
+                </CNavItem>
+              </CNav>
+              <CTabContent>
+                <CTabPane data-tab="general">
+                <br/>
                 <CCardHeader id="headingOne">
-                  <CButton 
-                    block 
-                    color="link" 
-                    className="text-left m-0 p-0" 
-                    onClick={() => setAccordion(accordion === 0 ? null : 0)}
-                  >
                     <h5 className="m-0 p-0">General Details</h5>
-                  </CButton>
                 </CCardHeader>
-                <CCollapse show={accordion === 0}>
-                  <CCardBody>
 
-                <CFormGroup row className="my-0">
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Branch ID</CLabel>
-                            <CInput id="company" placeholder="Enter your Branch ID" disabled/>
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Product</CLabel>
-                            <CInput id="company" placeholder="Enter your Product Name" disabled />
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Sub Product</CLabel>
-                            <CInput id="company" placeholder="Enter your Sub Product Name" disabled />
-                        </CFormGroup>
-                    </CCol>
-                </CFormGroup>
-                <CFormGroup row className="my-0">
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Operation</CLabel>
-                            <CInput id="company" placeholder="Enter your Operation name" disabled />
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Cust ID</CLabel>
-                            <CInput id="company" placeholder="Enter your Cust ID" disabled/>
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Customer Name</CLabel>
-                            <CInput id="company" placeholder="Enter your Customer Name" disabled />
-                        </CFormGroup>
-                    </CCol>
-                </CFormGroup>
-                <CFormGroup row className="my-0">
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">IE Code</CLabel>
-                            <CInput id="company" placeholder="Enter your IE Code" disabled />
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">PAN Code</CLabel>
-                            <CInput id="company" placeholder="Enter your PAN Code" disabled/>
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Account No</CLabel>
-                            <CInput id="company" placeholder="Enter your Account No" disabled />
-                        </CFormGroup>
-                    </CCol>
-                </CFormGroup>
-                <CFormGroup row className="my-0">
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">GST No</CLabel>
-                            <CInput id="company" placeholder="Enter your GST No" disabled />
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Currency </CLabel>
-                            <CInput id="company" placeholder="Enter your Currency" disabled />
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Amount</CLabel>
-                            <CInput id="company" placeholder="Enter your Amount" disabled />
-                        </CFormGroup>
-                    </CCol>
-                </CFormGroup>
-            </CCardBody>
-                </CCollapse>
-              </CCard>
-              <br/>
-              <CCard className="mb-0">
+                <CCardBody>
+
+<CFormGroup row className="my-0">
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">Branch ID</CLabel>
+            <CInput id="company" placeholder="Enter your Branch ID" disabled/>
+        </CFormGroup>
+    </CCol>
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">Product</CLabel>
+            <CInput id="company" placeholder="Enter your Product Name" disabled />
+        </CFormGroup>
+    </CCol>
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">Sub Product</CLabel>
+            <CInput id="company" placeholder="Enter your Sub Product Name" disabled />
+        </CFormGroup>
+    </CCol>
+</CFormGroup>
+<CFormGroup row className="my-0">
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">Operation</CLabel>
+            <CInput id="company" placeholder="Enter your Operation name" disabled />
+        </CFormGroup>
+    </CCol>
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">Cust ID</CLabel>
+            <CInput id="company" placeholder="Enter your Cust ID" disabled/>
+        </CFormGroup>
+    </CCol>
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">Customer Name</CLabel>
+            <CInput id="company" placeholder="Enter your Customer Name" disabled />
+        </CFormGroup>
+    </CCol>
+</CFormGroup>
+<CFormGroup row className="my-0">
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">IE Code</CLabel>
+            <CInput id="company" placeholder="Enter your IE Code" disabled />
+        </CFormGroup>
+    </CCol>
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">PAN Code</CLabel>
+            <CInput id="company" placeholder="Enter your PAN Code" disabled/>
+        </CFormGroup>
+    </CCol>
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">Account No</CLabel>
+            <CInput id="company" placeholder="Enter your Account No" disabled />
+        </CFormGroup>
+    </CCol>
+</CFormGroup>
+<CFormGroup row className="my-0">
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">GST No</CLabel>
+            <CInput id="company" placeholder="Enter your GST No" disabled />
+        </CFormGroup>
+    </CCol>
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">Currency </CLabel>
+            <CInput id="company" placeholder="Enter your Currency" disabled />
+        </CFormGroup>
+    </CCol>
+    <CCol xs="4">
+        <CFormGroup>
+            <CLabel htmlFor="company">Amount</CLabel>
+            <CInput id="company" placeholder="Enter your Amount" disabled />
+        </CFormGroup>
+    </CCol>
+</CFormGroup>
+</CCardBody>
+
+
+                </CTabPane>
+                <CTabPane data-tab="ref">
+                <br/>            
+                  
                 <CCardHeader id="headingTwo">
-                  <CButton 
-                    block 
-                    color="link" 
-                    className="text-left m-0 p-0" 
-                    onClick={() => setAccordion(accordion === 1 ? null : 1)}
-                  >
-                    <h5 className="m-0 p-0">Reference Details</h5>
-                  </CButton>
-                </CCardHeader>
-                <CCollapse show={accordion === 1}>
-                  <CCardBody>
-                    <CFormGroup row className="my-0">
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Bill Ref No.</CLabel>
-                            <CInput id="company" placeholder="Enter your Bill Ref No." disabled />
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Bill Status</CLabel>
-                            <CInput id="company" placeholder="Enter your Bill Status" disabled />
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Customer Portal Ref No.</CLabel>
-                            <CInput id="company" placeholder="Enter your Customer Portal Ref No." disabled />
-                        </CFormGroup>
-                    </CCol>
-                </CFormGroup>
-                <CFormGroup row className="my-0">
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Limit ID</CLabel>
-                            <CInput id="company" placeholder="Enter your Limit ID" disabled />
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Charges</CLabel>
-                            <CInput id="company" placeholder="Enter your Charges" disabled />
-                        </CFormGroup>
-                    </CCol>
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Margin %</CLabel>
-                            <CInput id="company" placeholder="Enter your Margin %" disabled />
-                        </CFormGroup>
-                    </CCol>
-                </CFormGroup>
-                <CFormGroup row className="my-0">
-                    <CCol xs="4">
-                        <CFormGroup>
-                            <CLabel htmlFor="company">Other Bank Ref No</CLabel>
-                            <CInput id="company" placeholder="Enter your Other Bank Ref No" disabled />
-                        </CFormGroup>
-                    </CCol>
-                    
-                </CFormGroup>
+                  
+                  <h5 className="m-0 p-0">Reference Details</h5>
                 
-                  </CCardBody>
-                </CCollapse>
-              </CCard>
-              <br/>
-              <CCard className="mb-0">
-                <CCardHeader id="headingThree">
-                  <CButton 
-                    block 
-                    color="link" 
-                    className="text-left m-0 p-0" 
-                    onClick={() => setAccordion(accordion === 2 ? null : 2)}
-                  >
+              </CCardHeader>
+              
+                <CCardBody>
+                  <CFormGroup row className="my-0">
+                  <CCol xs="4">
+                      <CFormGroup>
+                          <CLabel htmlFor="company">Bill Ref No.</CLabel>
+                          <CInput id="company" placeholder="Enter your Bill Ref No." disabled />
+                      </CFormGroup>
+                  </CCol>
+                  <CCol xs="4">
+                      <CFormGroup>
+                          <CLabel htmlFor="company">Bill Status</CLabel>
+                          <CInput id="company" placeholder="Enter your Bill Status" disabled />
+                      </CFormGroup>
+                  </CCol>
+                  <CCol xs="4">
+                      <CFormGroup>
+                          <CLabel htmlFor="company">Customer Portal Ref No.</CLabel>
+                          <CInput id="company" placeholder="Enter your Customer Portal Ref No." disabled />
+                      </CFormGroup>
+                  </CCol>
+              </CFormGroup>
+              <CFormGroup row className="my-0">
+                  <CCol xs="4">
+                      <CFormGroup>
+                          <CLabel htmlFor="company">Limit ID</CLabel>
+                          <CInput id="company" placeholder="Enter your Limit ID" disabled />
+                      </CFormGroup>
+                  </CCol>
+                  <CCol xs="4">
+                      <CFormGroup>
+                          <CLabel htmlFor="company">Charges</CLabel>
+                          <CInput id="company" placeholder="Enter your Charges" disabled />
+                      </CFormGroup>
+                  </CCol>
+                  <CCol xs="4">
+                      <CFormGroup>
+                          <CLabel htmlFor="company">Margin %</CLabel>
+                          <CInput id="company" placeholder="Enter your Margin %" disabled />
+                      </CFormGroup>
+                  </CCol>
+              </CFormGroup>
+              <CFormGroup row className="my-0">
+                  <CCol xs="4">
+                      <CFormGroup>
+                          <CLabel htmlFor="company">Other Bank Ref No</CLabel>
+                          <CInput id="company" placeholder="Enter your Other Bank Ref No" disabled />
+                      </CFormGroup>
+                  </CCol>
+                  
+              </CFormGroup>
+              
+                </CCardBody>
+
+
+
+                </CTabPane>
+                <CTabPane data-tab="benef">
+                  <br/>
+                  <CCardHeader id="headingThree">
                     <h5 className="m-0 p-0">Beneficiary Details</h5>
-                  </CButton>
                 </CCardHeader>
-                <CCollapse show={accordion === 2}>
+                
                   <CCardBody>
                   <CFormGroup row className="my-0">
                     <CCol xs="4">
@@ -313,21 +322,20 @@ const Collapses = () => {
                     </CCol>
                 </CFormGroup>
                   </CCardBody>
-                </CCollapse>
-              </CCard>
-              <br/>
+                
+                </CTabPane>
+              </CTabContent>
+            </CTabs>
+          </CCardBody>
+        </CCard>
+      </CCol>
+
+      <br/>
               <CCard className="mb-0">
                 <CCardHeader id="headingThree">
-                  <CButton 
-                    block 
-                    color="link" 
-                    className="text-left m-0 p-0" 
-                    onClick={() => setAccordion(accordion === 3 ? null : 3)}
-                  >
+                  
                     <h5 className="m-0 p-0">Remarks</h5>
-                  </CButton>
-                </CCardHeader>
-                <CCollapse show={accordion === 3}>
+                  </CCardHeader>
                   <CCardBody>
                   <CFormGroup row className="my-0">
                     <CCol xs="12">
@@ -339,15 +347,20 @@ const Collapses = () => {
                     
                 </CFormGroup>
                   </CCardBody>
-                </CCollapse>
+                
               </CCard>
-              
-            </div>
-          </CCardBody>
-        </CCard>
-        
-      </CCol>
-    </CRow>
+                <br/>
+              <CCol col="12" sm="3" md="3" xl className="mb-3 mb-xl-0" >
+                <CButton block color="primary">Submit</CButton>
+              </CCol>
+
+
+
+
+
+
+
+    </>
   )
 }
 
