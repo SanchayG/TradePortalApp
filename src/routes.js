@@ -89,7 +89,7 @@ const routes = [
   { path: '/MakerChecker/Checker', name: 'Checker', component: Checker},
   { path: '/MakerChecker/Maker', name: 'Maker', component: Maker},
   { path: '/MakerChecker/test', name: 'test', component: test},
-  { path: '/MakerChecker/test2', name: 'test2', component: test2}
+  { path: '/MakerChecker/test2', name: 'test2', component: test2},
   { path: '/newDashboard', name: 'Dashboard', component: newDashboard}
   
 ];
