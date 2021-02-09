@@ -57,6 +57,13 @@ const _nav =  [
     
   },
   {
+    _tag: 'CSidebarNavItem',
+    name: 'test2',
+    to: '/MakerChecker/test2',
+    icon: 'cil-scrubber',
+    
+  },
+  {
     _tag: 'CSidebarNavDivider',
     className: 'm-2'
   }

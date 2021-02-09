@@ -39,7 +39,8 @@ const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
 const Checker = React.lazy(()=>import('./views/MakerChecker/Checker'));
 const Maker = React.lazy(()=>import('./views/MakerChecker/Maker'));
-const test = React.lazy(()=>import('./views/MakerChecker/test'))
+const test = React.lazy(()=>import('./views/MakerChecker/test'));
+const test2 = React.lazy(()=>import('./views/MakerChecker/test2'))
 
 
 const routes = [
@@ -85,8 +86,8 @@ const routes = [
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/MakerChecker/Checker', name: 'Checker', component: Checker},
   { path: '/MakerChecker/Maker', name: 'Maker', component: Maker},
-  { path: '/MakerChecker/test', name: 'test', component: test}
-  
+  { path: '/MakerChecker/test', name: 'test', component: test},
+  { path: '/MakerChecker/test2', name: 'test2', component: test2}
 ];
 
 export default routes;
