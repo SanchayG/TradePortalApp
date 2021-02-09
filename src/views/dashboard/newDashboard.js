@@ -9,7 +9,7 @@ import {
   CLink,
 } from '@coreui/react'
 
-import usersData from '../users/inboxData'
+import usersData from '../users/inboxData1'
 const fields = ['Txn_No','Product', 'Sub-Product', 'Operation', 'Cust ID', 'Account no', 'Currency', 'Amount', 'Beneficiary Name', 'Bill Ref No', 'Customer Portal Ref No', 'Entry Time']
 
 const WidgetsDropdown = lazy(() => import('../widgets/WidgetsDropdown.js'))
