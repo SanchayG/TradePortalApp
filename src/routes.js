@@ -40,7 +40,7 @@ const User = React.lazy(() => import('./views/users/User'));
 const Checker = React.lazy(()=>import('./views/MakerChecker/Checker'));
 const Maker = React.lazy(()=>import('./views/MakerChecker/Maker'));
 const test = React.lazy(()=>import('./views/MakerChecker/test'));
-const test2 = React.lazy(()=>import('./views/MakerChecker/test2'))
+const test2 = React.lazy(()=>import('./views/MakerChecker/test2'));
 const newDashboard = React.lazy(()=>import('./views/dashboard/newDashboard'));
 
 
@@ -89,7 +89,7 @@ const routes = [
   { path: '/MakerChecker/Checker', name: 'Checker', component: Checker},
   { path: '/MakerChecker/Maker', name: 'Maker', component: Maker},
   { path: '/MakerChecker/test', name: 'test', component: test},
-  { path: '/MakerChecker/test2', name: 'test2', component: test2}
+  { path: '/MakerChecker/test2', name: 'test2', component: test2},
   { path: '/newDashboard', name: 'Dashboard', component: newDashboard}
   
 ];

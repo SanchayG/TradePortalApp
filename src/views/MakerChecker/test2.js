@@ -111,7 +111,7 @@ export default class test2 extends Component {
                     let rowData = data[tableMeta.rowIndex];
                     
                     return (
-                        <Link to='/MakerChecker/Maker' className="fa fa-play"></Link>
+                        <Link to='/MakerChecker/Maker' className="fa fa-play">View</Link>
                     );
                 }
             }
@@ -123,15 +123,12 @@ export default class test2 extends Component {
             
             filterType: 'dropdown',
             responsive: 'stacked',
-           
+            selectableRows: false
         };
         
         return (
             <div>
-                <MUIDataTable title={<Typography variant="title">
-                    {isLoading && <CircularProgress size={24} style={{ marginLeft: 15, position: 'relative', top: 4 }} />}
-                </Typography>
-                } data={inboxData} columns={columns} options={options} />
+                <MUIDataTable data={inboxData} columns={columns} options={options} />
             </div>
         )
     }
