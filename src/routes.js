@@ -41,11 +41,13 @@ const Checker = React.lazy(()=>import('./views/MakerChecker/Checker'));
 const Maker = React.lazy(()=>import('./views/MakerChecker/Maker'));
 const test = React.lazy(()=>import('./views/MakerChecker/test'));
 const test2 = React.lazy(()=>import('./views/MakerChecker/test2'))
+const newDashboard = React.lazy(()=>import('./views/dashboard/newDashboard'));
+
 
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/dashboard', name: 'Inbox', component: Dashboard },
   { path: '/theme', name: 'Theme', component: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },
@@ -88,6 +90,8 @@ const routes = [
   { path: '/MakerChecker/Maker', name: 'Maker', component: Maker},
   { path: '/MakerChecker/test', name: 'test', component: test},
   { path: '/MakerChecker/test2', name: 'test2', component: test2}
+  { path: '/newDashboard', name: 'Dashboard', component: newDashboard}
+  
 ];
 
 export default routes;
