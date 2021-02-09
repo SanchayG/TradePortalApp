@@ -1,8 +1,15 @@
-import { CircularProgress, Typography } from '@material-ui/core';
 import MUIDataTable from "mui-datatables";
 import React, { Component } from 'react';
 import inboxData from '../users/inboxData'
 import { Link } from 'react-router-dom';
+import {
+    CCard,
+    CCardBody,
+    CCardHeader,
+    CCol,
+    CRow
+  } from '@coreui/react'
+
 export default class test2 extends Component {
     state = {
         page: 0,
@@ -12,126 +19,103 @@ export default class test2 extends Component {
     };
 
     render() {
-        
+
 
         const columns = [
-        {
-            name: "BDTxnNo",
-            label: "Txn No",
-            options: {
-                filter: true,
+            {
+                name: "BDTxnNo",
+                label: "Txn No"
 
-            }
-        },
-        {
-            name: "BDProduct",
-            label: "Product",
-            options: {
-                filter: true,
-            }
-        },
-        {
-            name: "BDSubProduct",
-            label: "Sub Product",
-            options: {
-                filter: false,
-            }
-        },
-        {
-            name: "BDOperation",
-            label: "Operation",
-            options: {
-                filter: false,
-            }
-        },
-        {
-            name: "CustID",
-            label: "Cust ID",
-            options: {
-                filter: true,
-            }
-        },
-        {
-            name: "BDAccountNo",
-            label: "Account No",
-            options: {
-                filter: false,
-            }
-        },
-        {
-            name: "BDCurrency",
-            label: "Currency",
-            options: {
-                filter: false,
-            }
-        },
-        {
-            name: "BDAmount",
-            label: "Amount",
-            options: {
-                filter: false,
-            }
-        },
-        {
-            name: "BeneficiaryName",
-            label: "Beneficiary Name",
-            options: {
-                filter: false,
-            }
-        },
-        {
-            name: "BillRefNo",
-            label: "Bill Ref No",
-            options: {
-                filter: false,
-            }
-        },
-        {
-            name: "CustomerPortalRefNo",
-            label: "Customer Portal Ref No",
-            options: {
-                filter: false,
-            }
-        },
-        {
-            name: "EntryTime",
-            label: "Entry Time",
-            options: {
-                filter: false,
-            }
-        },
-        {
-            name: "Action",
-            options: {
-                filter: false,
-                sort: false,
-                empty: true,
-                customBodyRender: (value, tableMeta, updateValue) => {
-                    const { data } = this.state;
-                    let rowData = data[tableMeta.rowIndex];
-                    
-                    return (
-                        <Link to='/MakerChecker/Maker' className="fa fa-play">View</Link>
-                    );
+            },
+            {
+                name: "BDProduct",
+                label: "Product"
+            },
+            {
+                name: "BDSubProduct",
+                label: "Sub Product"
+            },
+            {
+                name: "BDOperation",
+                label: "Operation"
+            },
+            {
+                name: "CustID",
+                label: "Cust ID"
+            },
+            {
+                name: "BDAccountNo",
+                label: "Account No"
+            },
+            {
+                name: "BDCurrency",
+                label: "Currency"
+            },
+            {
+                name: "BDAmount",
+                label: "Amount"
+            },
+            {
+                name: "BeneficiaryName",
+                label: "Beneficiary Name"
+            },
+            {
+                name: "BillRefNo",
+                label: "Bill Ref No"
+            },
+            {
+                name: "CustomerPortalRefNo",
+                label: "Customer Portal Ref No"
+            },
+            {
+                name: "EntryTime",
+                label: "Entry Time"
+            },
+            {
+                name: "Action",
+                options: {
+                    filter: false,
+                    sort: false,
+
+                    customBodyRender: (value, tableMeta, updateValue) => {
+                        const { data } = this.state;
+                        let rowData = data[tableMeta.rowIndex];
+
+                        return (
+                            <Link to='/MakerChecker/Maker' className="fa fa-play">View</Link>
+                        );
+                    }
                 }
-            }
-        },
+            },
 
         ];
         const { data, isLoading } = this.state;
         const options = {
-            
+
             filterType: 'dropdown',
             responsive: 'stacked',
             selectableRows: false
         };
-        
+
         return (
             <div>
-                <MUIDataTable data={inboxData} columns={columns} options={options} />
+                <CRow>
+                    <CCol>
+                        <CCard>
+                            <CCardHeader>
+                                Inbox
+            </CCardHeader>
+                            <CCardBody>
+
+                                <MUIDataTable data={inboxData} columns={columns} options={options} />
+
+                            </CCardBody>
+                        </CCard>
+                    </CCol>
+                </CRow>
             </div>
         )
     }
 
-           
+
 }

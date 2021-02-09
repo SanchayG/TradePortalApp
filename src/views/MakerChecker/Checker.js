@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import {
   CButton,
   CCard,
@@ -350,11 +351,14 @@ const Collapses = () => {
                 
               </CCard>
                 <br/>
-              <CCol col="12" sm="3" md="3" xl className="mb-3 mb-xl-0" >
-                <CButton block color="primary">Submit</CButton>
-              </CCol>
-
-
+                <CRow>
+                      <CCol xs="6">
+                      <Link to="/dashboard">
+                          <CButton color="primary" className="px-4">Submit</CButton>
+                        </Link>
+                      </CCol>
+                      
+                    </CRow>
 
 
 
