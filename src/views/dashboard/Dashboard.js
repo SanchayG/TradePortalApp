@@ -1,3 +1,4 @@
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import MUIDataTable from "mui-datatables";
 import React, { Component } from 'react';
 import inboxData from '../users/inboxData'
@@ -82,7 +83,7 @@ export default class test2 extends Component {
                         let rowData = data[tableMeta.rowIndex];
 
                         return (
-                            <Link to='/MakerChecker/Maker' className="fa fa-play">View</Link>
+                          <Link to='/MakerChecker/Maker' ><PlayArrowIcon /></Link>
                         );
                     }
                 }
